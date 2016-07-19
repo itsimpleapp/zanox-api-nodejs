@@ -1,0 +1,12 @@
+{
+    "name": "zanox-api",
+    "version": "0.0.9",
+    "description": "API integration with Zanox",
+    "author": "André Ferreira <andrehrf@gmail.com>",
+    "main": "index.js",
+    "dependencies": {
+        "request": "^2.72.0",
+        "md5": "^2.0.0",
+        "hat": "^0.0.3"
+    }
+}
