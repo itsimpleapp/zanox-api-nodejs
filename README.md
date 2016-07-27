@@ -1,6 +1,9 @@
 # Zanox API
 
-API integration with Zanox
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andrehrf/zanox-api-nodejs/master/LICENSE)
+[![npm version](https://badge.fury.io/js/zanox-api.svg)](https://badge.fury.io/js/zanox-api)
+
+API integration with Zanox 
 
 ## Install
 
