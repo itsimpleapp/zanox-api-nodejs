@@ -1,9 +1,17 @@
 {
     "name": "zanox-api",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "API integration with Zanox",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andrehrf/zanox-api-nodejs"
+    },
+    "bugs": {
+        "url": "https://github.com/andrehrf/zanox-api-nodejs/issues"
+    },
+    "homepage": "https://github.com/andrehrf/zanox-api-nodejs",
     "dependencies": {
         "request": "^2.72.0",
         "md5": "^2.0.0",
