@@ -291,7 +291,7 @@ module.exports = function(connectid, secretkey) {
          * @return void
          */
         deeplink: function(url, adspace, cb){
-            request("http://toolbox.zanox.com/tools/api/deeplink?connectid=" + connectid + "&format=json&adspaceid=" + adspace + "&url=" + this.urlencode(deeplink), (error, response, body) => { 
+            request("http://toolbox.zanox.com/tools/api/deeplink?connectid=" + connectid + "&format=json&adspaceid=" + adspace + "&url=" + this.urlencode(url), (error, response, body) => { 
                 if(error){
                     cb(error, null);
                 }
