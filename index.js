@@ -76,6 +76,18 @@ module.exports = function(connectid, secretkey) {
         },
         
         /**
+         * Function to encode URL
+         * 
+         * @see http://locutus.io/php/url/urlencode/
+         * @param str
+         * @return str
+         */
+        urlencode: function(str){
+            str = (str + '');
+            return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+')
+        },
+
+        /**
          * Get your profile information
          * 
          * @see https://developer.zanox.com/web/guest/publisher-api-2011/get-profiles
@@ -269,6 +281,37 @@ module.exports = function(connectid, secretkey) {
         accountbalances: function(params, cb) {
             let URL = this.createurl("https://api.zanox.com/json/2011-03-01/payments/balances", params);
             this.getinapi(URL, "/payments/balances", cb);
+        }
+        
+        /**
+         * Create tracking links
+         * 
+         * @param string url
+         * @param integer adspace
+         * @return void
+         */
+        deeplink: function(url, adspace, cb){
+            request("http://toolbox.zanox.com/tools/api/deeplink?connectid=" + connectid + "&format=json&adspaceid=" + adspace + "&url=" + this.urlencode(deeplink), (error, response, body) => { 
+                if(error){
+                    cb(error, null);
+                }
+                else{
+                    var resp = JSON.parse(body);
+                    
+                    if(typeof cb == "function"){
+                        if (resp == null)
+                            cb({"msg": "Error connecting to Zanox."}, "");    
+                        else if(resp.url !== "")
+                            cb(false, resp.url);    
+                        else if(resp.error == "4")
+                            cb({"msg": "More than one program was found with the current URL, unfortunately it will not be possible to generate the link."}, "");    
+                        else if(resp.error == "5")
+                            cb({"msg": "No authorization in the program."}, "");      
+                        else
+                            cb({"msg": "Invalid link to this program."}, "");  
+                    }
+                }
+            });
         }
     }
 }
