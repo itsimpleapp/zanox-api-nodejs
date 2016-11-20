@@ -22,7 +22,7 @@ $ npm install zanox-api
 ```js
 "use strict";
 
-let Zanox = require("./index.js"),
+let Zanox = require("zanox-api"),
     zanox = new Zanox("connectid", "secretkey");
 
 zanox.programs({region: "BR"}, function(err, result){

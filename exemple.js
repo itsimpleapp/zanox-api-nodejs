@@ -12,14 +12,14 @@
 let Zanox = require("./index.js"),
     zanox = new Zanox("connectid", "secretkey");//Token de afiliação
 
-/*zanox.programs({region: "BR"}, function(err, result){
-  console.log(result.programItems.programItem);
-});*/
+zanox.programs({region: "BR"}, function(err, result){
+    console.log(result.programItems.programItem);
+});
 
-/*zanox.programapplications({region: "BR"}, function(err, result){
-  console.log(result.programApplicationItems.programApplicationItem);
-});*/
+zanox.programapplications({region: "BR"}, function(err, result){
+    console.log(result.programApplicationItems.programApplicationItem);
+});
 
-/*zanox.deeplink("http://www.extra.com.br/", "adspace", function(err, url){
+zanox.deeplink("http://www.extra.com.br/", "adspace", function(err, url){
     console.log(url); //https://ad.zanox.com/ppc/?40352125C16456675&ULP=[[http://www.extra.com.br/?utm_source=zanox&utm_medium=deeplink&utm_campaign=deeplink]]
-});*/
+});
