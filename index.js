@@ -281,7 +281,7 @@ module.exports = function(connectid, secretkey) {
         accountbalances: function(params, cb) {
             let URL = this.createurl("https://api.zanox.com/json/2011-03-01/payments/balances", params);
             this.getinapi(URL, "/payments/balances", cb);
-        }
+        },
         
         /**
          * Create tracking links
