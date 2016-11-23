@@ -284,6 +284,22 @@ module.exports = function(connectid, secretkey) {
         },
         
         /**
+         * Get coupons
+         * 
+         * @see https://developer.zanox.com/web/guest/publisher-api-2011/get-incentives
+         * @param object params
+         * program: Limits results to a particular program.
+         * adspace: Limits results to incentives that have tracking links associated with this AdSpace.
+         * incentiveType: Limits results to one of the following incentive types.
+         * region: Limits results to a region.
+         * @param function cb
+         */
+        coupons: function(params, cb){
+            params["incentiveType"] = "coupons";
+            this.incentives(params, cb);
+        }
+        
+        /**
          * Create tracking links
          * 
          * @param string url
