@@ -297,7 +297,7 @@ module.exports = function(connectid, secretkey) {
         coupons: function(params, cb){
             params["incentiveType"] = "coupons";
             this.incentives(params, cb);
-        }
+        },
         
         /**
          * Create tracking links
