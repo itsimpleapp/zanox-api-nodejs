@@ -188,7 +188,7 @@ module.exports = function(connectid, secretkey) {
          */
         leads: function(date, params, cb) {
             let URL = this.createurl("https://api.zanox.com/json/2011-03-01/reports/leads/date/" + date, params);
-            this.getinapi(URL, "/reports/leads/date", cb);
+            this.getinapi(URL, "/reports/leads/date/" + date, cb);
         },
         
         /**
@@ -208,7 +208,7 @@ module.exports = function(connectid, secretkey) {
          */
         sales: function(date, params, cb) {
             let URL = this.createurl("https://api.zanox.com/json/2011-03-01/reports/sales/date/" + date, params);
-            this.getinapi(URL, "/reports/sales/date", cb);
+            this.getinapi(URL, "/reports/sales/date/" + date, cb);
         },
         
         /**
